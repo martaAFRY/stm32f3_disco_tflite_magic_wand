@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>stm32f3_disco_tflite_magic_wand</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.st.stm32cube.ide.mcu.MCUProjectNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>com.st.stm32cube.ide.mcu.MCUSW4STM32ConvertedProjectNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Doc/magic_generate_report.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/magic_generate_report.txt</locationURI>
+		</link>
+		<link>
+			<name>Application/User/magic.c</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Src/magic.c</locationURI>
+		</link>
+		<link>
+			<name>Application/User/magic_data.c</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Src/magic_data.c</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
