@@ -1,7 +1,7 @@
 Neural Network Tools for STM32 v1.2.0 (AI tools v5.0.0)
-Created date       : 2020-03-12 12:47:28
+Created date       : 2020-03-25 09:05:30
 
-Exec/report summary (generate dur=0.614s err=0)
+Exec/report summary (generate dur=0.538s err=0)
 ------------------------------------------------------------------------------------------------------------------------
 model file         : magic.tflite
 type               : tflite (tflite)
@@ -9,11 +9,11 @@ c_name             : magic
 compression        : None
 quantize           : None
 L2r error          : NOT EVALUATED
-workspace dir      : /tmp/mxAI_workspace5309719259541835598769951627459242
-output dir         : stm32ai_output
+workspace dir      : 
+output dir         : 
 
 model_name         : magic
-model_hash         : 119345ff39c44f0086a7320f93016fa7
+model_hash         : 6f650d093aab801f256b4934ba6e2543
 input              : input_0 [384 items, 1.50 KiB, ai_float, FLOAT32, (128, 3, 1)]
 input (total)      : 1.50 KiB
 output             : nl_6 [4 items, 16 B, ai_float, FLOAT32, (4,)]
@@ -46,7 +46,7 @@ id  layer (type)        output shape      param #     connected to             m
 ------------------------------------------------------------------------------------------------------------------------
 6   nl_6 (Nonlinearity) (4,)                          dense_5                  60                                
 ------------------------------------------------------------------------------------------------------------------------
-magic p=4300(16.80 KBytes) macc=69556 rom=16.80 KBytes ram=1.78 KiB io_ram=1.52 KiB
+model p=4300(16.80 KBytes) macc=69556 rom=16.80 KBytes ram=1.78 KiB io_ram=1.52 KiB
 
  
 Complexity per-layer - macc=69,556 rom=17,200

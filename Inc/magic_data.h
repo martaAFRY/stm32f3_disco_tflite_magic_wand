@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    magic_data.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Mar 12 12:47:28 2020
+  * @date    Wed Mar 25 09:05:30 2020
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention

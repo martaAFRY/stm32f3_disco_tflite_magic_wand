@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    magic.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Mar 12 12:47:28 2020
+  * @date    Wed Mar 25 09:05:30 2020
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -46,14 +46,14 @@
 #define AI_NET_OBJ_INSTANCE g_magic
  
 #undef AI_MAGIC_MODEL_SIGNATURE
-#define AI_MAGIC_MODEL_SIGNATURE     "119345ff39c44f0086a7320f93016fa7"
+#define AI_MAGIC_MODEL_SIGNATURE     "6f650d093aab801f256b4934ba6e2543"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     "(rev-5.0.0)"
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Thu Mar 12 12:47:28 2020"
+#define AI_TOOLS_DATE_TIME   "Wed Mar 25 09:05:30 2020"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__

@@ -95,31 +95,15 @@ void toggleLeds(int a, int b) {
 }
 int main(void)
 {
-	/* USER CODE BEGIN 1 */
-
-	/* USER CODE END 1 */
 
 	static ai_float acc_data[ACC_SIZE] = {0.f};
 	static ai_float out_data[4];
 	static int pos = 0;
 
-
-
-	/* MCU Configuration--------------------------------------------------------*/
-
-	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 	HAL_Init();
 	BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
-	/* USER CODE BEGIN Init */
 
-	/* USER CODE END Init */
-
-	/* Configure the system clock */
 	SystemClock_Config();
-
-	/* USER CODE BEGIN SysInit */
-
-	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
@@ -128,7 +112,7 @@ int main(void)
 	MX_SPI1_Init();
 	MX_USB_PCD_Init();
 	MX_X_CUBE_AI_Init();
-	/* USER CODE BEGIN 2 */
+
 	BSP_LED_Init(LED4);
 	BSP_LED_Init(LED3);
 	BSP_LED_Init(LED5);
@@ -137,31 +121,27 @@ int main(void)
 	BSP_LED_Init(LED10);
 	BSP_LED_Init(LED8);
 	BSP_LED_Init(LED6);
-	/* USER CODE END 2 */
 
-	//  ACCELERO_MEMS_Test();
 	InitAccelero();
 	initGyro();
 	/* Infinite loop */
-	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
 		/* USER CODE END WHILE */
 		if(BSP_PB_GetState(BUTTON_USER) == KEY_PRESSED) {
-
+			initGyro();
 			// push user button while making the magic gesture
-			// leds are off the buffer is filled
+			// when leds are off the buffer is filled
 			while(BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
 			{
 				if (pos + 2 < ACC_SIZE) {
-					initGyro();
 					SetGyro(&acc_data[pos], &acc_data[pos+1], &acc_data[pos+2]);
 					toggleLeds(LED6, LED7);
-					HAL_Delay(10);
+					HAL_Delay(7);
 					toggleLeds(LED5, LED8);
-					HAL_Delay(10);
+					HAL_Delay(7);
 					toggleLeds(LED4, LED9);
-					HAL_Delay(10);
+					HAL_Delay(6);
 				}
 				else
 					ledsOff();
@@ -170,30 +150,24 @@ int main(void)
 
 			MX_X_CUBE_AI_Process_f(acc_data, out_data);
 			// W Blue
-			if (out_data[0] > 0.5f) {
+			if (out_data[0] > 0.8f) {
 				toggleLeds(LED4, LED9);
-			}
-			// O green
-			if (out_data[1] > 0.5f) {
+			} else if (out_data[1] > 0.8f) {
+				// O green
 				toggleLeds(LED6, LED7);
-			}
-			// L orange
-			if (out_data[2] > 0.5f) {
+			} else if (out_data[2] > 0.8f) {
+				// L orange
 				toggleLeds(LED5, LED8);
-			}
-			// unknown red
-			if (out_data[3] > 0.5f) {
+			} else {
+				// other red
 				toggleLeds(LED3, LED10);
 			}
 			// clear
 			for (int i = 0; i< ACC_SIZE; i++)
 				acc_data[i] = 0.f;
 		}
-		/* USER CODE BEGIN 3 */
 		pos = 0;
 	}
-
-	/* USER CODE END 3 */
 }
 
 /**

@@ -79,7 +79,7 @@
 
 #define AI_MNETWORK_DATA_ACTIVATIONS_INT_SIZE AI_MAGIC_DATA_ACTIVATIONS_SIZE
 
- void MX_X_CUBE_AI_Process_f(float *acc_data, float *out_data);
+void MX_X_CUBE_AI_Process_f(float *acc_data, float *out_data);
 void MX_X_CUBE_AI_Init(void);
 void MX_X_CUBE_AI_Process(void);
 int aiInit(const ai_u8* activations);
