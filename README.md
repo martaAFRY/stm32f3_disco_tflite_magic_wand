@@ -9,8 +9,8 @@ The initial code didn't work so well so I have re-trained the network with new d
 To run, I hold the device with the "ST-Link" USB cable in my right hand. When I want to perform a gesture I click the blue user button. While the gesture is cast, leds are blinking. When the leds stop blinking the capture buffer is filled and the inference is run. If an Wing gesture was captured blue led are lit, if a Ring gesture was captured green leds are lit, if a Slope gesture was captured orange led are lit, otherwise red leds are lit.
 
 For more details I wrote a blog post for this project:
-https://martaafry.github.io/stm32,/neural/networks,/edge-ai,/gesture/detection,/tensorflow/2020/03/25/Magic.html
 
+https://martaafry.github.io/2020/03/25/Magic.html
 
 
 
